@@ -17,11 +17,12 @@ loadMoreButton.addEventListener('click', onLoadMore);
 let page = 1;
 let query = '';
 const perPage = 30;
+let totalHits = 0;
 
 function onSearch(event) {
     event.preventDefault();
 
-    let query = event.currentTarget.searchQuery.value.trim()
+    query = event.currentTarget.searchQuery.value.trim()
 
     gallery.innerHTML = '';
 
