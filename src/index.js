@@ -15,6 +15,7 @@ searchForm.addEventListener('submit', onSearch);
 loadMoreButton.addEventListener('click', onLoadMore);
 
 let page = 1;
+let query = '';
 const perPage = 30;
 
 function onSearch(event) {
@@ -52,8 +53,7 @@ function onLoadMore() {
     
     fetchArticles(query, page, perPage).then(({ data }) => {
         createCards(data.hits);
-        const lightbox = new SimpleLightbox(".gallery a", { captionDelay: 250, })
-            .refresh()
+        const lightbox = new SimpleLightbox(".gallery a", { captionDelay: 250, }).refresh()
 
     const totalPages = Math.ceil(data.totalHits / perPage)
 
